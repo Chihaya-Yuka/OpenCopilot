@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copilot Chat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <div class="chat-title">Copilot Chat</div>
+        </div>
+        <div class="chat-messages" id="chat-messages">
+        </div>
+        <div class="chat-input">
+            <input type="text" id="user-input" placeholder="Type a message...">
+            <button onclick="sendMessage()">Send</button>
+        </div>
+        <div class="chat-input">
+            <label for="api-key">OpenAI API Key:</label>
+            <input type="text" id="api-key" placeholder="Enter your API key...">
+            <button onclick="saveApiKey()">Save Key</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
