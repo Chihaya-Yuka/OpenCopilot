@@ -6,7 +6,7 @@ import mimetypes
 
 # Server configuration
 HOST = '0.0.0.0'
-PORT = 8080
+PORT = 2334
 DOCUMENT_ROOT = os.path.dirname(os.path.abspath(__file__)).replace('\\','/') + '/public'
 
 # Helper function to send HTTP response
