@@ -14,6 +14,10 @@ def proxy(path):
     method = request.method
     resp = requests.request(method, url, headers=headers, data=data, cookies=request.cookies, allow_redirects=False)
     response = Response(resp.content, status=resp.status_code, headers=dict(resp.headers))
+    response.headers['Access-Control-Allow-Origin'] = 'http://127.0.0.1:2334'
+    response.headers['Access-Control-Allow-Methods'] = 'GET, POST, PUT, DELETE, PATCH, OPTIONS'
+    response.headers['Access-Control-Allow-Headers'] = 'Content-Type, Authorization'
+    
     return response
 
 if __name__ == '__main__':
