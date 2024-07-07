@@ -16,7 +16,7 @@ We welcome contributions to improve OpenCopilot.  If you have any suggestions, b
 
 ## Acknowledgments
 
-- **[24a](https://thz.cool)**: For providing the API service that powers OpenCopilot.
+- **[0x24a](https://github.com/0x24a)**: For providing the API service that powers OpenCopilot.
 
 ---
 
