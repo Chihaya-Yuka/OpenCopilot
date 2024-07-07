@@ -8,7 +8,7 @@ function sendMessage() {
     fetchResponse(userInput)
         .then(response => response.json())
         .then(data => {
-            const aiResponse = data.choices[0].text.trim();
+            const aiResponse = data.choices[0].message.content.trim();
             appendMessage(aiResponse, 'received');
         })
         .catch(error => {
@@ -18,7 +18,7 @@ function sendMessage() {
 }
 
 async function fetchResponse(userInput) {
-    const baseUrl = `http://127.0.0.1:2333/aigc/claude-3.5-sonnet?question=${encodeURIComponent(userInput)}`;
+    const baseUrl = `https://skibidi.24a.fun/aigc/claude-3.5-sonnet?question=${encodeURIComponent(userInput)}`;
     const response = await fetch(baseUrl, {
         method: 'GET',
         headers: {
