@@ -34,45 +34,58 @@ You can only give one reply for each conversation turn.
 You should always generate short suggestions for the next user turns that are relevant to the conversation and not offensive.
 `
 
-function sendMessage() {
-    const userInput = document.getElementById('user-input').value.trim();
-    if (!userInput) return;
+class ChatBot {
+    constructor(baseURL) {
+        this.baseURL = baseURL;
+    }
 
-    appendMessage(userInput, 'sent');
-    document.getElementById('user-input').value = '';
+    async sendMessage(userInput) {
+        if (!userInput.trim()) return;
 
-    fetchResponse(userInput)
-        .then(response => response.json())
-        .then(data => {
+        this.appendMessage(userInput, 'sent');
+        document.getElementById('user-input').value = '';
+
+        try {
+            const response = await this.fetchResponse(userInput);
+            const data = await response.json();
             const aiResponse = data.choices[0].message.content.trim();
-            appendMessage(aiResponse, 'received');
-        })
-        .catch(error => {
+            this.appendMessage(aiResponse, 'received');
+        } catch (error) {
             console.error('Error fetching AI response:', error);
-            appendMessage('Error fetching AI response. Please try again.', 'received');
-        });
-}
-
-async function fetchResponse(userInput) {
-    const baseUrl = `http://127.0.0.1:2333/aigc/claude-3.5-sonnet?question=${encodeURIComponent(prompt+userInput)}`;
-    const response = await fetch(baseUrl, {
-        method: 'GET',
-        headers: {
-            'Content-Type': 'application/json'
+            this.appendMessage('Error fetching AI response. Please try again.', 'received');
         }
-    });
-    return response;
+    }
+
+    async fetchResponse(userInput) {
+        const url = `${this.baseURL}?question=${encodeURIComponent(userInput)}`;
+        const response = await fetch(url, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+        return response;
+    }
+
+    appendMessage(message, type) {
+        const messageContainer = document.getElementById('chat-messages');
+        const messageElement = document.createElement('div');
+        messageElement.classList.add('message', type === 'sent' ? 'sent' : 'received');
+        const messageContent = document.createElement('div');
+        messageContent.classList.add('message-content');
+        messageContent.textContent = message;
+        messageElement.appendChild(messageContent);
+        messageContainer.appendChild(messageElement);
+
+        messageContainer.scrollTop = messageContainer.scrollHeight;
+    }
 }
 
-function appendMessage(message, type) {
-    const messageContainer = document.getElementById('chat-messages');
-    const messageElement = document.createElement('div');
-    messageElement.classList.add('message', type === 'sent' ? 'sent' : 'received');
-    const messageContent = document.createElement('div');
-    messageContent.classList.add('message-content');
-    messageContent.textContent = message;
-    messageElement.appendChild(messageContent);
-    messageContainer.appendChild(messageElement);
+const baseUrl = 'http://127.0.0.1:2333/aigc/claude-3.5-sonnet'; // Update with your base URL
+const chatBot = new ChatBot(baseUrl);
 
-    messageContainer.scrollTop = messageContainer.scrollHeight;
-}
+// Example usage assuming a button click triggers sending the message
+document.getElementById('send-button').addEventListener('click', function() {
+    const userInput = document.getElementById('user-input').value.trim();
+    chatBot.sendMessage(userInput);
+});
