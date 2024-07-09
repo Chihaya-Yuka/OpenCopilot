@@ -12,7 +12,7 @@ OpenCopilot is a free and open-source AI-driven copilot designed to assist you w
 
 ## Contributing
 
-We welcome contributions to improve OpenCopilot.  If you have any suggestions, bug reports, or would like to contribute code, please open an issue or submit a pull request on our [GitHub repository](https://github.com/yourusername/opencopilot).
+We welcome contributions to improve OpenCopilot.  If you have any suggestions, bug reports, or would like to contribute code, please open an issue or submit a pull request on our [GitHub repository](https://github.com/Chihaya-Yuka/OpenCopilot).
 
 ## Acknowledgments
 
