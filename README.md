@@ -21,3 +21,6 @@ We welcome contributions to improve OpenCopilot.  If you have any suggestions, b
 ---
 
 Enjoy using OpenCopilot and boost your productivity with the power of AI!  ❤
+
+## Stargazers over time
+[![Stargazers over time](https://starchart.cc/Chihaya-Yuka/OpenCopilot.svg?variant=adaptive)](https://starchart.cc/Chihaya-Yuka/OpenCopilot)
