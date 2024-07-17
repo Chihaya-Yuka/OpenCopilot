@@ -36,6 +36,11 @@ def handle_client(client_socket):
             send_response(client_socket, '405 Method Not Allowed', b'Method Not Allowed')
             return
 
+        if path == '/api/live':
+            response_content = b'{"code":200,"name":"opencopilotv1"}'
+            send_response(client_socket, '200 OK', response_content, content_type='application/json')
+            return
+
         if path == '/':
             path = '/index.html'
 
