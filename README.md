@@ -24,7 +24,7 @@ Request API address, http://127.0.0.1:2334/api/live, to return the result should
 
 ## Contributing
 
-We welcome contributions to improve OpenCopilot.  If you have any suggestions, bug reports, or would like to contribute code, please open an issue or submit a pull request on our [GitHub repository](https://github.com/yourusername/opencopilot).
+We welcome contributions to improve OpenCopilot.  If you have any suggestions, bug reports, or would like to contribute code, please open an issue or submit a pull request on our [GitHub repository](https://github.com/Chihaya-Yuka/OpenCopilot).
 
 ## Acknowledgments
 
@@ -35,3 +35,6 @@ We welcome contributions to improve OpenCopilot.  If you have any suggestions, b
 ---
 
 Enjoy using OpenCopilot and boost your productivity with the power of AI!  ❤
+
+## Stargazers over time
+[![Stargazers over time](https://starchart.cc/Chihaya-Yuka/OpenCopilot.svg?variant=adaptive)](https://starchart.cc/Chihaya-Yuka/OpenCopilot)
