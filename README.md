@@ -10,6 +10,18 @@ OpenCopilot is a free and open-source AI-driven copilot designed to assist you w
 - **Real-Time Responses**: Get instant responses to your queries, making your workflow smoother and faster.
 - **Privacy-Focused**: Your data is not stored or shared, ensuring your privacy is maintained.
 
+## Embed OpenCopilot in your website
+
+1. Check whether the service is enabled
+
+Request API address, http://127.0.0.1:2334/api/live, to return the result should be:
+
+```JSON
+{"code":200,"name":"opencopilotv1"}
+```
+
+2. Embed OpenCopilot using iframe
+
 ## Contributing
 
 We welcome contributions to improve OpenCopilot.  If you have any suggestions, bug reports, or would like to contribute code, please open an issue or submit a pull request on our [GitHub repository](https://github.com/yourusername/opencopilot).
@@ -17,6 +29,8 @@ We welcome contributions to improve OpenCopilot.  If you have any suggestions, b
 ## Acknowledgments
 
 - **[0x24a](https://github.com/0x24a)**: For providing the API service that powers OpenCopilot.
+
+
 
 ---
 
