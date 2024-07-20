@@ -1,47 +1,52 @@
 {
-  "name": "opencopilot",
+  "name": "open-copilot",
   "displayName": "OpenCopilot",
-  "description": "Copilot For Free",
-  "version": "0.0.1",
+  "description": "A VSCode extension to get free Copilot",
+  "version": "1.0.0",
+  "publisher": "Yuka",
   "engines": {
-    "vscode": "^1.91.0"
+    "vscode": "^1.60.0"
   },
   "categories": [
     "Other"
   ],
-  "activationEvents": [],
-  "main": "./dist/extension.js",
+  "activationEvents": [
+    "onCommand:openCopilot.start"
+  ],
+  "main": "extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "opencopilot.helloWorld",
-        "title": "Hello World"
+        "command": "openCopilot.start",
+        "title": "Open Copilot"
       }
-    ]
+    ],
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "openCopilot",
+          "title": "OpenCopilot",
+          "icon": "resources/copilot-icon.png"
+        }
+      ]
+    },
+    "views": {
+      "openCopilot": [
+        {
+          "id": "openCopilotView",
+          "name": "OpenCopilot"
+        }
+      ]
+    }
   },
   "scripts": {
-    "vscode:prepublish": "npm run package",
-    "compile": "webpack",
-    "watch": "webpack --watch",
-    "package": "webpack --mode production --devtool hidden-source-map",
-    "compile-tests": "tsc -p . --outDir out",
-    "watch-tests": "tsc -p . -w --outDir out",
-    "pretest": "npm run compile-tests && npm run compile && npm run lint",
-    "lint": "eslint src --ext ts",
-    "test": "vscode-test"
+    "vscode:prepublish": "vsce package",
+    "test": "node ./out/test/runTest.js"
   },
   "devDependencies": {
-    "@types/vscode": "^1.91.0",
-    "@types/mocha": "^10.0.7",
-    "@types/node": "20.x",
-    "@typescript-eslint/eslint-plugin": "^7.14.1",
-    "@typescript-eslint/parser": "^7.11.0",
-    "eslint": "^8.57.0",
-    "typescript": "^5.4.5",
-    "ts-loader": "^9.5.1",
-    "webpack": "^5.92.1",
-    "webpack-cli": "^5.1.4",
-    "@vscode/test-cli": "^0.0.9",
-    "@vscode/test-electron": "^2.4.0"
+    "@types/node": "^14.14.37",
+    "@types/vscode": "^1.60.0",
+    "typescript": "^4.0.0",
+    "vscode-test": "^1.4.0"
   }
 }

@@ -1,26 +1,58 @@
-// The module 'vscode' contains the VS Code extensibility API
-// Import the module and reference it with the alias vscode in your code below
 import * as vscode from 'vscode';
 
-// This method is called when your extension is activated
-// Your extension is activated the very first time the command is executed
 export function activate(context: vscode.ExtensionContext) {
+    context.subscriptions.push(
+        vscode.commands.registerCommand('openCopilot.start', () => {
+            const panel = vscode.window.createWebviewPanel(
+                'openCopilot',
+                'OpenCopilot',
+                vscode.ViewColumn.One, {
+                    enableScripts: true
+                }
+            );
 
-	// Use the console to output diagnostic information (console.log) and errors (console.error)
-	// This line of code will only be executed once when your extension is activated
-	console.log('Congratulations, your extension "opencopilot" is now active!');
+            panel.webview.html = getWebviewContent();
+        })
+    );
 
-	// The command has been defined in the package.json file
-	// Now provide the implementation of the command with registerCommand
-	// The commandId parameter must match the command field in package.json
-	const disposable = vscode.commands.registerCommand('opencopilot.helloWorld', () => {
-		// The code you place here will be executed every time your command is executed
-		// Display a message box to the user
-		vscode.window.showInformationMessage('Hello World from OpenCopilot!');
-	});
+    const provider = new OpenCopilotViewProvider(context.extensionUri);
 
-	context.subscriptions.push(disposable);
+    context.subscriptions.push(
+        vscode.window.registerWebviewViewProvider(OpenCopilotViewProvider.viewType, provider)
+    );
 }
 
-// This method is called when your extension is deactivated
+class OpenCopilotViewProvider implements vscode.WebviewViewProvider {
+    public static readonly viewType = 'openCopilot.openCopilotView';
+
+    constructor(private readonly extensionUri: vscode.Uri) {}
+
+    public resolveWebviewView(
+        webviewView: vscode.WebviewView,
+        context: vscode.WebviewViewResolveContext,
+        _token: vscode.CancellationToken
+    ) {
+        webviewView.webview.options = {
+            enableScripts: true
+        };
+
+        webviewView.webview.html = getWebviewContent();
+    }
+}
+
+function getWebviewContent() {
+    const uri = 'https://awaland.xyz';
+    return `<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OpenCopilot</title>
+</head>
+<body>
+<iframe src="${uri}" width="100%" height="100%" frameborder="0"></iframe>
+</body>
+</html>`;
+}
+
 export function deactivate() {}
