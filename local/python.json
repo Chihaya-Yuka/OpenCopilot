@@ -1,0 +1,11 @@
+{"prompt": "What is the purpose of the first line in a script?", "completion": "The first line of a script, also known as the shebang line, specifies the interpreter that should be used to run the script."}
+{"prompt": "What does #!/usr/bin/python3 mean?", "completion": "This line tells the operating system to use the Python 3 interpreter located in the /usr/bin directory to run the script."}
+{"prompt": "What is the difference between #!/usr/bin/python3 and #!/usr/bin/env python3?", "completion": "The first one specifies the exact path to the Python 3 interpreter, while the second one uses the env command to find the Python 3 interpreter in the system's environment settings."}
+{"prompt": "Why is #!/usr/bin/env python3 recommended?", "completion": "This is because it allows the system to find the Python 3 interpreter even if it's not installed in the default /usr/bin directory."}
+{"prompt": "What happens when the system sees the #!/usr/bin/env python3 line?", "completion": "The system will first check the environment settings to find the installation path of Python 3, and then use the corresponding interpreter to run the script."}
+{"prompt": "How can I import the time module in Python?", "completion": "You can import the entire module using `import time`, and then reference its functions using `time.sleep(1)`."}
+{"prompt": "How can I import all functions from the time module?", "completion": "You can use `from time import *`, and then reference the functions directly using `sleep(1)`."}
+{"prompt": "How can I import a specific function from the time module?", "completion": "You can use `from time import sleep`, and then reference the function using `sleep(1)`."}
+{"prompt": "Can I give an alias to the time module?", "completion": "Yes, you can use `import time as abc`, and then reference the module's functions using `abc.sleep(1)`."}
+{"prompt": "What are the advantages of importing specific functions from a module?", "completion": "Importing specific functions can help avoid naming conflicts and make your code more readable."}
+{"prompt": "What are the advantages of giving an alias to a module?", "completion": "Giving an alias to a module can make your code more readable and easier to understand, especially when working with long module names."}
