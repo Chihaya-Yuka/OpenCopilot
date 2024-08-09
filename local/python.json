@@ -9,3 +9,11 @@
 {"prompt": "Can I give an alias to the time module?", "completion": "Yes, you can use `import time as abc`, and then reference the module's functions using `abc.sleep(1)`."}
 {"prompt": "What are the advantages of importing specific functions from a module?", "completion": "Importing specific functions can help avoid naming conflicts and make your code more readable."}
 {"prompt": "What are the advantages of giving an alias to a module?", "completion": "Giving an alias to a module can make your code more readable and easier to understand, especially when working with long module names."}
+{"prompt": "How can I use the print function in Python to format output?", "completion": "You can use the % operator to format strings, similar to printf in C/C++."}
+{"prompt": "What is the syntax for using the % operator with print?", "completion": "The syntax is `print(\"format string\" % value)`, where the format string contains placeholders and the value is the value to be inserted."}
+{"prompt": "What are some examples of using the % operator with print?", "completion": "For example, `print(\"100 + 200 = %d\" % 300)` or `print(\"A的小写是%s\" % \"a\")`."}
+{"prompt": "How can I insert multiple values into a format string?", "completion": "You can use a tuple to insert multiple values, like this: `print(\"%d + %d = %d\" % (100, 200, 300))`."}
+{"prompt": "What are the different placeholders that can be used in a format string?", "completion": "Some common placeholders include `%s` for strings, `%d` for signed decimal integers, `%u` for unsigned decimal integers, and `%f` for floating-point numbers."}
+{"prompt": "What is the difference between `%x` and `%X`?", "completion": " `%x` uses lowercase letters for hexadecimal digits, while `%X` uses uppercase letters."}
+{"prompt": "What is the difference between `%e` and `%E`?", "completion": " `%e` uses lowercase letters for scientific notation, while `%E` uses uppercase letters."}
+{"prompt": "What is the difference between `%g` and `%G`?", "completion": " `%g` uses the lowest number of significant digits for floating-point numbers, while `%G` uses the highest number of significant digits."}
