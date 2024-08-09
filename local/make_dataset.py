@@ -19,8 +19,7 @@ class DatasetMerger:
             os.makedirs(self.output_dir)
         
         # Generate a timestamped filename
-        timestamp = datetime.now().strftime('%Y%m%d_%H%M%S')
-        output_file = os.path.join(self.output_dir, f'{timestamp}.json')
+        output_file = os.path.join(self.output_dir, f'data.json')
         
         # Write the merged data to the file
         with open(output_file, 'w') as file:
