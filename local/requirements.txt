@@ -1,0 +1,9 @@
+jupyter
+modelscope
+transformers
+streamlit
+sentencepiece
+accelerate
+datasets
+peft
+torch
