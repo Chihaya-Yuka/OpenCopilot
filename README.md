@@ -10,6 +10,12 @@ OpenCopilot is a free and open-source AI-driven copilot designed to assist you w
 - **Real-Time Responses**: Get instant responses to your queries, making your workflow smoother and faster.
 - **Privacy-Focused**: Your data is not stored or shared, ensuring your privacy is maintained.
 
+## Run OpenCopilot on your computer
+
+1. Open the folder local.
+2. Run train.py
+3. Run chat.py
+
 ## Embed OpenCopilot in your website
 
 1. Check whether the service is enabled
