@@ -13,8 +13,12 @@ OpenCopilot is a free and open-source AI-driven copilot designed to assist you w
 ## Run OpenCopilot on your computer
 
 1. Open the folder local.
-2. Run train.py
-3. Run chat.py
+2. Run train.py.
+3. Run chat.py.
+
+## Run OpenCopilot on the Cloud
+
+Just run init.py.
 
 ## Embed OpenCopilot in your website
 
