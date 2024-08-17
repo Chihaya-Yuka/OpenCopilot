@@ -120,3 +120,5 @@ if __name__ == '__main__':
     train()
     res = infer(prompt="How are you?")
     print(res)
+else:
+    train()
